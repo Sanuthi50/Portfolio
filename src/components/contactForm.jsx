@@ -57,27 +57,43 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // Get the access key (use import.meta.env for Vite)
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    
+    // Debug: Check if access key exists
+    if (!accessKey) {
+      console.error('Web3Forms access key is missing!');
+      console.log('Available env vars:', import.meta.env);
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'process.env.REACT_APP_WEB3FORMS_KEY', 
+          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          from_name: formData.name,
+          replyto: formData.email,
         }),
       });
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
+        console.error('Web3Forms error:', data);
         setSubmitStatus('error');
       }
     } catch (error) {
@@ -85,7 +101,6 @@ const Contact = () => {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      // Clear status message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     }
   };
@@ -123,7 +138,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-slate-300 text-lg drop-shadow-lg mb-6">
-           Reach out! I'd love to collaborate on exciting projects or discuss opportunities.
+            Have a project in mind? Let's talk about it.
           </p>
         <div className="bg-gradient-to-br from-slate-900/50 via-slate-950/50 to-slate-950/60 rounded-2xl border border-emerald-500/10 p-8 md:p-10 backdrop-blur-xl shadow-2xl shadow-emerald-500/10 hover:border-emerald-500/20 hover:shadow-emerald-500/20 transition-all duration-300">
           <div className="space-y-6">
