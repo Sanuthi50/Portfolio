@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #112D38; /* Yankees Blue */
+  --color-secondary: #165267; /* Blue Sapphire */
+  --color-accent: #12919E; /* Viridian Green */
+  --color-background: #C4E7E9; /* Columbia Blue */
+  --color-light: #F2F4F1; /* Anti-Flash White */
+  --color-dark: #94979A; /* Spanish Gray */
+}

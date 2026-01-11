@@ -1,0 +1,99 @@
+{
+  "featured": [
+    {
+      "id": 1,
+      "title": "AI-Driven University Admission Predictor (ZPredict)",
+      "description": "Full-stack AI platform for Sri Lankan A/L students predicting university admission using ML models (Random Forest, Regression) and RAG pipeline. Features semantic search with FAISS, Google Gemini integration, and intelligent chat assistant with career recommendations.",
+      "tech":["Python", "Django REST", "Scikit-learn", "LangChain", "Gemini", "PostgreSQL", "Celery", "FAISS"],
+      "image": "/zpredict.png",
+      "github": "https://github.com/Sanuthi50/zpredict",
+      "liveLink":null,
+      "linkedinDemo": "https://www.linkedin.com/posts/sanuthi-liyasika-165a3b254_ai-machinelearning-nlp-activity-7374018432461287424-l9dw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD7NNh0BW49mybD1aekm7JN5aAcGigz87Iw",
+      "category": "AI/ML"
+    },
+    {
+      "id": 2,
+      "title": "Miyusara Vocational Training Center Website",
+      "description": "End-to-end responsive website for a registered vocational training center featuring 17+ course programs, interactive UI with contact forms, Web3Forms email integration, and automated CI/CD pipeline with GitHub Actions for deployment and sitemap generation.",
+      "tech": ["React", "Tailwind CSS", "Web3Forms", "GitHub Actions", "CI/CD","SEO"],
+      "image": "/MIVTC.png",
+      "github": null,
+      "liveLink": "https://mivtc.edu.lk",
+      "linkedinDemo": null,
+      "category": "UI/UX"
+    },
+    {
+      "id": 3,
+      "title": "Luxury Hotel UI – React Frontend Demo",
+      "description": "Modern, responsive hotel website UI showcasing React component-based architecture with carousel gallery and interactive elements. Frontend-only portfolio demo deployed on Vercel.",
+      "tech": ["React.js", "Tailwind CSS","Vercel"],
+      "image": "/luminaryshore.png",
+      "github": "https://github.com/Sanuthi50/TheLuminaryShores",
+      "liveLink": "https://the-luminary-shores.vercel.app/",
+      "linkedinDemo": null,
+      "category": "UI/UX"
+    }
+  ],
+  "other": [
+    {
+      "id": 4,
+      "title": "SuperCar Price Prediction Web App",
+      "description": "Full-stack Flask application with integrated ML model for real-time supercar price prediction. Features secure authentication, REST APIs, session management, and analytics dashboard.",
+      "tech": ["Python", "Flask", "PostgreSQL", "Machine Learning", "HTML", "CSS", "JavaScript"],
+      "category": "AI/ML",
+      "github": "https://github.com/Sanuthi50/Supercar-predictor",
+      "liveLink": null,
+      "linkedinDemo": null
+    },
+    {
+      "id": 5,
+      "title": "Cab Booking System",
+      "description": "Java backend application with REST APIs, responsive JavaScript frontend, and automated testing suite.",
+      "tech":["Java", "JavaScript", "REST API"],
+      "category": "Fullstack",
+      "github": "https://github.com/Sanuthi50/MegaCityCab-Application",
+      "liveLink": null,
+      "linkedinDemo": null
+    },
+    {
+      "id": 6,
+      "title": "TechFix - Inventory Management System",
+      "description": "Desktop inventory management application built with C# WinForms and SQL Server for comprehensive stock tracking and management.",
+      "tech": ["C#", "WinForms", "SQL Server"],
+      "category": "Fullstack",
+      "github": "https://github.com/Sanuthi50/Texfix",
+      "liveLink": null,
+      "linkedinDemo": null
+    },
+    {
+      "id": 7,
+      "title": "CarMate - Unified Car Service Platform",
+      "description": "Full-stack car service management platform with secure user modules, backend implementation, and database design for streamlined service operations.",
+      "tech": ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "XAMPP"],
+      "category": "Fullstack",
+      "github": "https://github.com/Sanuthi50/CarMate",
+      "liveLink": null,
+      "linkedinDemo": null
+    },
+    {
+      "id": 8,
+      "title": "Portfolio Website",
+      "description": "Modern, responsive portfolio with smooth animations and interactive elements.",
+      "tech": ["React", "Tailwind", "Netlify"],
+      "category": "UI/UX",
+      "github": "https://github.com/Sanuthi50/Portfolio",
+      "liveLink": null,
+      "linkedinDemo": null
+    },
+    {
+      "id": 9,
+      "title": "The Velvet Steam- New York",
+      "description": "Vintage-themed cafe website showcasing a nostalgic aesthetic with interactive UI elements. Features menu displays, cafe information, and responsive design capturing the retro ambiance of an imaginary New York cafe.",
+      "tech": ["React", "Tailwind", "Netlify"],
+      "category": "UI/UX",
+      "github": "https://github.com/Sanuthi50/Retro-Cafe",
+      "liveLink": "https://mellifluous-froyo-b0617e.netlify.app/",
+      "linkedinDemo": null
+    }
+]
+}
