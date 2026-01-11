@@ -42,6 +42,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,13 +52,42 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'process.env.REACT_APP_WEB3FORMS_KEY', 
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+      // Clear status message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   return (
@@ -147,6 +177,18 @@ const Contact = () => {
                 <ArrowRight className={`w-5 h-5 transition-transform duration-300 ${isSubmitting ? '' : 'group-hover:translate-x-1'}`} />
               </div>
             </button>
+
+            {/* Success/Error Messages */}
+            {submitStatus === 'success' && (
+              <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-emerald-400 text-center animate-fadeIn">
+                ✓ Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center animate-fadeIn">
+                ✗ Something went wrong. Please try again or email me directly.
+              </div>
+            )}
                       
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4">
@@ -183,6 +225,13 @@ const Contact = () => {
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-15px); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
         }
       `}</style>
     </section>
