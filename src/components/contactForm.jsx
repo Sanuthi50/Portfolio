@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Copy, Check } from 'lucide-react';
 
 const INPUT_CLASSES = "w-full px-4 py-3 bg-slate-900/50 border border-emerald-500/20 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300";
 
@@ -43,7 +43,12 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
-
+  const [emailCopied, setEmailCopied] = useState(false);
+  const copyEmail = () => {
+  navigator.clipboard.writeText('Sanuthiliyasika@gmail.com');
+  setEmailCopied(true);
+  setTimeout(() => setEmailCopied(false), 2000);
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -138,7 +143,24 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-slate-300 text-lg drop-shadow-lg mb-6">
-            Have a project in mind? Let's talk about it.
+          Let's collaborate. Open for projects and opportunities. Reach out via the form or email me directly at:&nbsp;<br />
+                <button
+                onClick={copyEmail}
+                className="group relative inline-flex items-center gap-2"
+                >
+                <div className="absolute inset-0 bg-emerald-500/20 rounded-lg blur-md group-hover:blur-lg group-hover:bg-emerald-500/30 transition-all duration-300"></div>
+                <div className="relative bg-slate-900/50 px-4 py-2 rounded-lg border border-emerald-500/20 hover:border-emerald-400 hover:bg-slate-800/50 transition-all duration-300 flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-emerald-400" />
+                    <span className="text-slate-300 group-hover:text-emerald-400 transition-colors duration-300">
+                    Sanuthiliyasika@gmail.com
+                    </span>
+                    {emailCopied ? (
+                    <Check className="w-4 h-4 text-emerald-400" />
+                    ) : (
+                    <Copy className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors duration-300" />
+                    )}
+                </div>
+                </button>
           </p>
         <div className="bg-gradient-to-br from-slate-900/50 via-slate-950/50 to-slate-950/60 rounded-2xl border border-emerald-500/10 p-8 md:p-10 backdrop-blur-xl shadow-2xl shadow-emerald-500/10 hover:border-emerald-500/20 hover:shadow-emerald-500/20 transition-all duration-300">
           <div className="space-y-6">
