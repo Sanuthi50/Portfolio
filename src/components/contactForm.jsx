@@ -123,7 +123,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-slate-300 text-lg drop-shadow-lg mb-6">
-            Have a project in mind? Let's talk about it.
+           Reach out! I'd love to collaborate on exciting projects or discuss opportunities.
           </p>
         <div className="bg-gradient-to-br from-slate-900/50 via-slate-950/50 to-slate-950/60 rounded-2xl border border-emerald-500/10 p-8 md:p-10 backdrop-blur-xl shadow-2xl shadow-emerald-500/10 hover:border-emerald-500/20 hover:shadow-emerald-500/20 transition-all duration-300">
           <div className="space-y-6">
