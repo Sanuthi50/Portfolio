@@ -16,7 +16,7 @@
       "title": "Miyusara Vocational Training Center Website",
       "description": "End-to-end responsive website for a registered vocational training center featuring 17+ course programs, interactive UI with contact forms, Web3Forms email integration, and automated CI/CD pipeline with GitHub Actions for deployment and sitemap generation.",
       "tech": ["React", "Tailwind CSS", "Web3Forms", "GitHub Actions", "CI/CD","SEO"],
-      "image": "/MIVTC.png",
+      "image": "/MIVTC.jpeg",
       "github": null,
       "liveLink": "https://mivtc.edu.lk",
       "linkedinDemo": null,
